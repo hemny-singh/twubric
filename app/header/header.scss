@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import "./app/assets/sass/variables";
+
+.header {
+  display: table;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}

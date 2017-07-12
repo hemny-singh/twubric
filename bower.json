@@ -1,0 +1,25 @@
+{
+  "name": "Twubric",
+  "version": "0.0.1",
+  "homepage": "https://meet-hemny-singh.herokuapp.com",
+  "repository": {
+    "type": "git"
+  },
+  "authors": [
+    "Hemny"
+  ],
+  "keywords": [
+    "angularjs",
+    "gulp",
+    "Rubric"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "angular": "^1.5.8",
+    "angular-translate": "^2.11.1",
+    "angularLocalStorage": "ngStorage#^0.3.2",
+    "lodash": "^4.14.1",
+    "angular-ui-router": "^0.3.1",
+    "angular-translate-loader-partial": "^2.11.1"
+  }
+}

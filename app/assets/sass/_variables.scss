@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'AvenirNext';
+  src: url('/app/assets/fonts/AvenirNext-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AvenirNext Bold';
+  src: url('/app/assets/fonts/AvenirNext-Bold.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'AvenirNext SemiBold';
+  src: url('/app/assets/fonts/AvenirNext-DemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AvenirNext Heavy';
+  src: url('/app/assets/fonts/AvenirNext-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AvenirNext Medium';
+  src: url('/app/assets/fonts/AvenirNext-Medium.ttf') format('truetype');
+}
+
+$font-medium: AvenirNext Medium;
+$font-regular: AvenirNext;
+$font-semibold: AvenirNext SemiBold;
+$font-bold: AvenirNext Bold;
+$font-heavy: AvenirNext Heavy;
+
+//Define your color variable here
+$grey-color: #7e7e7e;
+$black-light-color: #232323;
+$border-color: #4d4d50;
+$grey-lighter-color: #ddd;
+$black-color: #000;
+$white-color: #FFFFFF;
+/*$highlight1: #8BC34A;*/
+$highlight1: #5953ff;
+/*$highlight2: #C51162;*/
+$highlight2: #77ffcd;
+$dark-blue-color: #26348e;
+$highlight3: #e45151;
