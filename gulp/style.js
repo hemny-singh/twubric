@@ -7,6 +7,7 @@ var sass = require('gulp-sass');
 var inject = require('gulp-inject');
 var concatCss = require('gulp-concat-css');
 var config = require('./config');
+var browserSync = require('browser-sync');
 
 //Compile SASS files.
 gulp.task('styles:dev:compile', function () {
@@ -17,7 +18,6 @@ gulp.task('styles:dev:compile', function () {
 
 //Inject compiled styles into the html file.
 gulp.task('styles:dev', ['styles:dev:compile'], function () {
-
     var injectOptions = {
         name: 'styles',
         addSuffix: '?v=' + new Date().getTime()
@@ -26,7 +26,8 @@ gulp.task('styles:dev', ['styles:dev:compile'], function () {
     var styles = gulp.src(path.join(config.getDistPath(), '/**/*.css'));
     return gulp.src(config.getViewPath())
         .pipe(inject(styles, injectOptions))
-        .pipe(gulp.dest(config.getRootPath()));
+        .pipe(gulp.dest(config.getRootPath()))
+        .pipe(browserSync.reload({stream:true}))
 });
 
 //Compile and bundle LESS files.

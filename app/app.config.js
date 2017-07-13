@@ -37,11 +37,6 @@
 
         //Register the abstract states.
         registerStates($stateProvider, $urlRouterProvider);
-
-        //Register translations.
-        // $translateProvider.useLoader('$translatePartialLoader', {urlTemplate: 'app/{part}/localizations/{lang}.json'});
-        // $translateProvider.useSanitizeValueStrategy('escape');
-        // $translateProvider.preferredLanguage('en-US');
     }
 
     /**
