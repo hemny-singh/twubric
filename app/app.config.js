@@ -8,7 +8,6 @@
         'twubricApp.main',
         'twubricApp.header',
         'twubricApp.footer',
-        'twubricApp.sidemenu',
         'twubricApp.vendor',
         'twubricApp.index'
     ]);
@@ -63,11 +62,6 @@
                     'footer@twubricApp': {
                         controller: 'FooterController',
                         templateUrl: '/app/footer/footer.html',
-                        controllerAs: 'vm'
-                    },
-                    'sidemenu@twubricApp': {
-                        controller: 'SideMenuController',
-                        templateUrl: '/app/sidemenu/sidemenu.html',
                         controllerAs: 'vm'
                     }
                 }

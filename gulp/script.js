@@ -10,6 +10,7 @@ var angularFilesort = require('gulp-angular-filesort');
 var templateCache = require('gulp-angular-templatecache');
 var ngAnnotate = require('gulp-ng-annotate');
 var config = require('./config');
+var browserSync = require('browser-sync');
 
 //Inject the application files into the html file.
 gulp.task('scripts:dev', function () {
@@ -22,7 +23,8 @@ gulp.task('scripts:dev', function () {
     var scripts = gulp.src(config.appFiles('js', true)).pipe(angularFilesort());
     return gulp.src(config.getViewPath())
         .pipe(inject(scripts, injectOptions))
-        .pipe(gulp.dest(config.getRootPath()));
+        .pipe(gulp.dest(config.getRootPath()))
+        .pipe(browserSync.reload({stream:true}));
 });
 
 //Bundle the application files.

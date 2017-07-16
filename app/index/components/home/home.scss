@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import "./app/assets/sass/variables";
+
+.card-header, .card-body, .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.row {
+  > div.card-container {
+    border: 1px solid;
+    padding: 15px;
+  }
+}
+
+.submit-btn, .submit-btn:hover, .submit-btn:focus, .submit-btn:active{
+  background: $dark-blue-color;
+  color: $white-color;
+  border: none;
+  border-radius: 5%;
+}

@@ -1,2 +1,19 @@
 @charset "UTF-8";
 @import "./app/assets/sass/variables";
+
+body {
+  font-family: $font-regular;
+  width: 100%;
+  height: 100%;
+}
+
+span[disabled="disabled"], input[disabled="disabled"], button[disabled="disabled"] {
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+}
+
+.input-group {
+  .ng-invalid-date {
+    border: 1px solid red;
+  }
+}

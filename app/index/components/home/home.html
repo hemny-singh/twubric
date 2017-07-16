@@ -1,1 +1,72 @@
-﻿<h1>Let's build twubric app</h1>
+﻿<div>
+  <h2>Sort By</h2>
+  <div>
+    <button ng-click="vm.sortUserCards('total')">Twubric Score</button>
+    <button ng-click="vm.sortUserCards('friends')">Friends</button>
+    <button ng-click="vm.sortUserCards('influence')">Influence</button>
+    <button ng-click="vm.sortUserCards('chirpiness')">Chirpiness</button>
+  </div>
+</div>
+<div>
+  <h2>Joined Twitter Between</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <p class="input-group">
+        <input type="text" class="form-control" uib-datepicker-popup="dd/MMMM/yyyy"
+          ng-model="vm.filter.startDateValue" is-open="vm.filter.isOpenStartDate"
+          datepicker-options="vm.filter.dateOptions" ng-required="true" close-text="Close"
+          ng-change="vm.validateDate()" placeholder="dd / MMMM / yyyy"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="vm.openCalendar('isOpenStartDate')">
+              <i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+        <p ng-if="vm.filter.startDateError" class="error-label">{{vm.filter.startDateError}}</p>
+    </div>
+    <div class="col-md-4">
+      <p class="input-group">
+        <input type="text" class="form-control" uib-datepicker-popup="dd/MMMM/yyyy"
+          ng-model="vm.filter.endDateValue" is-open="vm.filter.isOpenEndDate" datepicker-options="vm.filter.dateOptions" ng-required="true" close-text="Close"
+          placeholder="dd / MMMM / yyyy" ng-change="vm.validateDate()"/>
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="vm.openCalendar('isOpenEndDate')">
+            <i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </p>
+      <p ng-if="vm.filter.endDateError" class="error-label">{{vm.filter.endDateError}}</p>
+    </div>
+    <button class="btn submit-btn col-md-2" ng-disabled="!vm.filterButtonEnable" ng-click="vm.filterData()">Filter</button>
+    <span class="clear-btn col-btn-1" ng-if="vm.clearButtonEnable" ng-click="vm.clearFilter()">Clear</span>
+  </div>
+  <p ng-if="vm.filter.dateError" class="error-label">{{vm.filter.dateError}}</p>
+</div>
+<div class="row">
+  <div ng-repeat="userData in vm.twitterData" class="col-md-4 col-sm-12 col-xs-12 card-container">
+    <div class="card-header">
+      <div>
+        <img ng-src="{{userData.image}}" alt="user-image">
+        <p>{{userData.fullname}}</p>
+      </div>
+      <span>{{userData.twubric.total}}</span>
+    </div>
+    <div class="card-body">
+      <div>
+        <strong>{{userData.twubric.friends}}</strong>
+        <span>Friends</span>
+      </div>
+      <div>
+        <strong>{{userData.twubric.influence}}</strong>
+        <span>Influence</span>
+      </div>
+      <div>
+        <strong>{{userData.twubric.chirpiness}}</strong>
+        <span>Chirpiness</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div>{{userData.join_date | date : 'MMM dd, yyyy'}}</div>
+      <span>Remove</span>
+    </div>
+  </div>
+  <div if="!vm.twitterData.length">Ooopss! Data not found</div>
+</div>

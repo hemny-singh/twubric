@@ -2,7 +2,6 @@
     'use strict';
 
     angular.module('twubricApp.services').service('httpService', httpService);
-
     /**
      * Abstraction for angular $http service.
      * @class

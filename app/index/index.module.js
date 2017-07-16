@@ -12,10 +12,9 @@
     /**
      * twubricApp.index config function.
      * @param {$stateProvider} $stateProvider
-     * @param {$translatePartialLoaderProvider} $translatePartialLoaderProvider
      */
     /* @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider) {
+    function config($stateProvider) {
         $stateProvider
             .state('twubricApp.index', {
                 abstract: true,
@@ -38,18 +37,6 @@
                     }
                 }
             })
-            .state('twubricApp.index.contact', {
-                url: '/contact',
-                views: {
-                    'index': {
-                        controller: 'ContactController',
-                        templateUrl: '/app/index/components/contact/contact.html',
-                        controllerAs: 'vm'
-                    }
-                }
-            });
-
-        $translatePartialLoaderProvider.addPart('index');
     }
 
 })();

@@ -5,6 +5,8 @@
     angular.module('twubricApp.vendor',
         [
             'pascalprecht.translate',
-            'ui.router'
+            'ui.router',
+            'angularMoment',
+            'ui.bootstrap'
         ]);
 })();
