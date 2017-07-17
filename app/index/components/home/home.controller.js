@@ -14,6 +14,10 @@
     function HomeController(httpService, twUtilsService, moment) {
         var $ctrl = this;
         $ctrl.twitterData = {};
+        $ctrl.sortData = {
+            key: 'total',
+            isReverse: false
+        }
         $ctrl.sortByKey = 'total';
         $ctrl.startDate = null;
         $ctrl.endDate = null;
@@ -43,8 +47,14 @@
         init();
 
         $ctrl.sortUserCards = function (type) {
-            $ctrl.sortByKey = type;
-            $ctrl.twitterData = twUtilsService.sortArray(angular.copy($ctrl.twitterData), 'twubric', $ctrl.sortByKey);
+            // var reverse = false;
+            if (type === $ctrl.sortData.key) {
+                $ctrl.sortData.isReverse = ! $ctrl.sortData.isReverse;
+            } else {
+                $ctrl.sortData.isReverse = false;
+                $ctrl.sortData.key = type;
+            }
+            $ctrl.twitterData = twUtilsService.sortArray(angular.copy($ctrl.twitterData), 'twubric', $ctrl.sortByKey, $ctrl.sortData.isReverse);
         };
 
         $ctrl.openCalendar = function (whichCal) {
@@ -87,7 +97,11 @@
             $ctrl.filter.endDateValue = null;
             $ctrl.clearButtonEnable = false;
             $ctrl.twitterData = twUtilsService.sortArray(angular.copy($ctrl.cachedData), 'twubric', $ctrl.sortByKey);
-        }
+        };
+
+        $ctrl.removeData = function (index) {
+            $ctrl.twitterData.splice(index, 1);
+        };
     }
 
 

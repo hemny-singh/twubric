@@ -23,7 +23,9 @@
     "angular-translate-loader-partial": "^2.11.1",
     "angular-moment": "^1.0.1",
     "moment": "^2.18.1",
-    "angular-bootstrap": "^2.5.0",
-    "isotope": "^3.0.4"
+    "angular-bootstrap": "^2.5.0"
+  },
+  "resolutions": {
+    "outlayer": "^1.2.0"
   }
 }

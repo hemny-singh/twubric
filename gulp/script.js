@@ -38,6 +38,24 @@ gulp.task('scripts:prod:bundle:js', function () {
         .pipe(gulp.dest(config.getDistPath()));
 });
 
+//Bundle the application files.
+gulp.task('scripts:prod:bundle:json', function () {
+    return gulp.src(config.appFiles('json', true))
+        .pipe(gulp.dest(config.getAppDistPath()));
+});
+
+//Bundle the application files.
+gulp.task('scripts:prod:bundle:fonts', function () {
+    return gulp.src(config.appFiles('{eot,otf,svg,ttf,woff,woff2}', true))
+        .pipe(gulp.dest(config.getAppDistPath()));
+});
+
+//Bundle the application files.
+gulp.task('scripts:prod:bundle:css', function () {
+    return gulp.src(config.appFiles('css', true))
+        .pipe(gulp.dest(config.getAppDistPath()));
+});
+
 //Bundle the template files.
 gulp.task('scripts:prod:bundle:html', function () {
 
@@ -56,7 +74,7 @@ gulp.task('scripts:prod:bundle:html', function () {
 });
 
 //Inject the js and html bundles into the html file.
-gulp.task('scripts:prod', ['scripts:prod:bundle:js', 'scripts:prod:bundle:html'], function () {
+gulp.task('scripts:prod', ['scripts:prod:bundle:js', 'scripts:prod:bundle:html', 'scripts:prod:bundle:json', 'scripts:prod:bundle:fonts', 'scripts:prod:bundle:css'], function () {
 
     var injectOptions = {
         name: 'app',

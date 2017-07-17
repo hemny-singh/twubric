@@ -9,6 +9,19 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var config = require('./config');
 
+
+// var Server = require('karma').Server;
+
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+  new Server({
+    configFile: '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
+
 gulp.task('server:watch', ['scripts:dev', 'styles:dev'], function () {
     console.log("server watch");
     gulp.watch(config.appFiles('scss', true), ['styles:dev']);
@@ -31,7 +44,7 @@ gulp.task('server:dev', ['server:watch'], function () {
 });
 
 //Start browserSync server in production mode.
-gulp.task('server:prod', function () {
+gulp.task('server:prod', ['build:prod'], function () {
 
     browserSync.instance = browserSync.init({
         startPath: '/',

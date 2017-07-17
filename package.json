@@ -45,5 +45,10 @@
     "jshint-stylish": "^2.2.0",
     "path": "^0.12.7",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0"
   }
 }

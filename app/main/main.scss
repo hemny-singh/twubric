@@ -1,10 +1,11 @@
 @charset "UTF-8";
 @import "./app/assets/sass/variables";
 
-body {
+body, html {
   font-family: $font-regular;
   width: 100%;
   height: 100%;
+  background: $bg-color;
 }
 
 span[disabled="disabled"], input[disabled="disabled"], button[disabled="disabled"] {
@@ -14,6 +15,16 @@ span[disabled="disabled"], input[disabled="disabled"], button[disabled="disabled
 
 .input-group {
   .ng-invalid-date {
-    border: 1px solid red;
+    border: 1px solid $danger;
   }
 }
+
+.error-label {
+  color: $danger;
+  font-family: $font-semibold;
+  text-align: end;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }

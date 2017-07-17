@@ -15,8 +15,137 @@
 }
 
 .submit-btn, .submit-btn:hover, .submit-btn:focus, .submit-btn:active{
-  background: $dark-blue-color;
+  background: $highlight2;
   color: $white-color;
   border: none;
   border-radius: 5%;
+  font-family: $font-semibold;
+}
+
+.main-container {
+  .data-not-found {
+    font-size: 3em;
+    height: calc(100vh - 354px);
+  }
+  padding: 25px 50px 0 50px;
+  .main-container-header {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 30px;
+    > h3 {
+      margin: 0;
+      > span {
+        font-family: $font-bold;
+      }
+      > i {
+        font-size: 11px;
+      }
+    }
+    .date-range-sec {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding-right: 0;
+      div:first-child {
+        padding-right: 0;
+      }
+      .clear-btn {
+        text-decoration: underline;
+        padding-right: 0;
+        font-family: $font-bold;
+        cursor: pointer;
+      }
+    }
+    p.input-group {
+      margin-bottom: 0;
+    }
+  }
+  .main-container-button {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    > span {
+      font-size: 16px;
+      font-family: $font-semibold;
+      color: $highlight1;
+    }
+    > button {
+        background: transparent;
+        border: none;
+        padding-right: 15px;
+        padding: 15px;
+        font-size: 15px;
+        font-family: $font-semibold;
+        &.selected {
+          border-bottom: 2px solid $highlight1;
+          > i {
+            font-weight: bold;
+          }
+        }
+    }
+  }
+  .main-container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: center;
+    .card-container {
+      width: 309px;
+      height: 242px;
+      margin: 15px;
+      box-shadow: 0px 4px 31px 0 rgba(0, 0, 0, 0.1);
+      background: white;
+      padding: 15px;
+      .card-header {
+        background: $highlight1;
+        color: white;
+        margin: -15px;
+        padding: 15px;
+        > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          > img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+          > p {
+            font-family: $font-semibold;
+          }
+        }
+        > span {
+          font-size: 30px;
+          color: $white-color;
+          font-family: $font-bold;
+        }
+      }
+      .card-body {
+        height: 116px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        strong {
+          font-size: 20px;
+          color: $highlight1;
+        }
+        span {
+          font-family: $font-medium;
+        }
+      }
+      .card-footer {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding-top: 10px;
+        > div {
+          font-style: italic;
+          font-family: $font-medium;
+        }
+        .remove-btn {
+          color: $danger;
+          font-family: $font-medium;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }

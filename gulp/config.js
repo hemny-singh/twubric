@@ -7,6 +7,7 @@ var paths = {
     root: './',
     app: './app/',
     www: './www/',
+    assets: './www/app/',
     doc: './doc',
     report: './report/jshint.html',
     view: './index.html'
@@ -44,6 +45,10 @@ exports.getAppPath = function () {
  */
 exports.getDistPath = function () {
     return path.join(paths.www);
+};
+
+exports.getAppDistPath = function () {
+    return path.join(paths.assets);
 };
 
 /**
