@@ -17,7 +17,7 @@
         $ctrl.sortData = {
             key: 'total',
             isReverse: false
-        }
+        };
         $ctrl.sortByKey = 'total';
         $ctrl.startDate = null;
         $ctrl.endDate = null;
@@ -42,7 +42,7 @@
                 .then(function(data) {
                     $ctrl.cachedData = angular.copy(data);
                     $ctrl.twitterData = twUtilsService.sortArray(angular.copy(data), 'twubric', $ctrl.sortByKey);
-                })
+                });
         }
         init();
 

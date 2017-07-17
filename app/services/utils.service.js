@@ -51,17 +51,16 @@
         function twDateRangeFilter(data, startDate, endDate, dataDateKey ) {
             var filtered = [], curDateData;
             //here you will have your desired input
-            console.log(startDate, endDate);
-            var start_date = Date.parse(startDate);
-            var end_date = Date.parse(moment(endDate).add(23, 'hours').add(59, 'seconds'));
+            var startDateParsed = Date.parse(startDate);
+            var endDateParsed = Date.parse(moment(endDate).add(23, 'hours').add(59, 'seconds'));
             for (var i = 0; i < data.length; i++) {
                 curDateData = data[i][dataDateKey];
-                if (curDateData >= start_date && curDateData <= end_date) {
+                if (curDateData >= startDateParsed && curDateData <= endDateParsed) {
                     filtered.push(data[i]);
                 }
             }
             return filtered;
-        };
+        }
     }
 })();
 

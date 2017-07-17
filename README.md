@@ -1,20 +1,19 @@
 # Let’s build a Twubric!
 
-### Development Build
+### Create the Build
 ```sh
-$ gulp build:dev (or "npm run development")
+$ gulp build:dev [Dev Build]
+$ gulp build:prod [Production Build]
+```
+
+### Run Development Server
+```sh
 $ gulp server:dev
 ```
 
-### Production Build
+### Run Production Server
 ```sh
-$ gulp build:prod (or "npm run production")
 $ gulp server:prod
-```
-
-### JsDoc Documentation
-```sh
-$ gulp documentation (or "npm run documentation")
 ```
 
 ### JsHint Report
